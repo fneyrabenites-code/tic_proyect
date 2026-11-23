@@ -1,4 +1,4 @@
-// Crea el botón y lo agrega a la página
+/ Crea el botón y lo agrega a la página
 const boton = document.createElement("button");
 boton.id = "subir";
 boton.textContent = "↑";
