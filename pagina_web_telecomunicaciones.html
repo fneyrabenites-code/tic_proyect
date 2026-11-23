@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OPEN5GCUBE</title>
+    <link rel="stylesheet" href="css/css01.css">
+</head>
+<body>
+<div id="contenedor">
+
+    <h1>OPEN5GCUBE</h1>
+
+    <ul id="indice">
+        <li><a href="#¿QUE_ES?">¿QUE ES?</a></li>
+        <li><a href="#CARACTERISTICAS_Y_COMPONENTES">CARACTERISTICAS Y COMPONENTES</a></li>
+        <li><a href="#¿PARA_QUE_PODEMOS_UTILIZARLA?">¿PARA QUE PODEMOS UTILIZARLA?</a></li>
+        <li><a href="#¿COMO_DESCARGARLO_E_INSTALARLO_EN_UBUNTU?">¿COMO DESCARGARLO E INSTALARLO EN UBUNTU?</a></li>
+    </ul>
+
+    <!-- ¿QUE ES? -->
+    <h2 id="¿QUE_ES?">¿Que es Open5GS?</h2>
+    <div class="foto img-que-es" role="img" aria-label="Red móvil 5G con Open5GS"></div>
+    <p>Open5GS es un proyecto avanzado de código abierto diseñado para construir
+       y administrar su propia red móvil NR/LTE. Ya sea que esté configurando una
+       red privada para pruebas, investigación o implementación, Open5GS ofrece una
+       solución robusta para configurar redes 5G (NR) y LTE (evolucionadas).</p>
+
+    <!-- CARACTERISTICAS Y COMPONENTES -->
+    <h2 id="CARACTERISTICAS_Y_COMPONENTES">Caracteristicas y componentes</h2>
+    <h3>Características principales</h3>
+    <div class="foto img-caracteristicas" role="img" aria-label="Características de open5Gcube"></div>
+    <ul>
+        <li><dt>Modular:</dt>
+            <dd>Permite combinar distintas implementaciones de código abierto,
+            incluso en diferentes versiones. Por ejemplo, un mismo núcleo con distintas
+            antenas.</dd></li>
+
+        <li><dt>Contenedores (Docker):</dt>
+            <dd>cada servicio (eNB, gNB, funciones del core 5G) corre
+            aislado, lo que facilita el despliegue y evita conflictos de dependencias.</dd></li>
+
+        <li><dt>Stacks por caso de uso:</dt>
+            <dd>Se agrupan servicios en “stacks” definidos con Docker-Compose,
+            por ejemplo Open5GS + srsRAN.</dd></li>
+
+        <li><dt>Reproducible:</dt>
+            <dd>Los parámetros globales (banda, canal, IPs fijas, IMSI y claves SIM) están
+            en archivos de entorno centrales, y la base de datos de suscriptores se crea desde cero
+            en cada arranque.</dd></li>
+
+        <li><dt>Interfaz web (WebUI):</dt>
+            <dd>permite configurar, iniciar y detener stacks, y ver los contenedores
+            y sus logs con indicadores de estado por colores.</dd></li>
+
+        <li><dt>Multigeneración:</dt>
+            <dd>se probó en 2G, 4G (con VoLTE) y 5G SA.</dd></li>
+
+        <li><dt>Compatible con equipos reales:</dt>
+            <dd>se evaluó con cinco smartphones comerciales y un módem.</dd></li>
+    </ul>
+
+    <h3>Componentes</h3>
+    <div class="foto img-componentes" role="img" aria-label="Componentes: core, RAN, orquestación y hardware"></div>
+
+    <h3>Núcleo 5G (Core)</h3>
+    <ul>
+        <li>Open5GS, el más usado en las prácticas</li>
+        <li>Free5GC</li>
+        <li>OAI-Core (OpenAirInterface)</li>
+        <li><a href="https://www.hs-osnabrueck.de/fileadmin/HSOS/Forschung/Recherche/Laboreinrichtungen_und_Versuchsbetriebe/Labor_fuer_Hochfrequenztechnik_und_Mobilkommunikation/Mobilkomtagung/2025/Vortraege/18_Thorsten_Horstmann.pdf">Si quieres saber más, haz click aqui</a></li>
+    </ul>
+
+    <h3>Red de acceso por radio (RAN / antena)</h3>
+    <ul>
+        <li>srsRAN</li>
+        <li>OAI-RAN</li>
+        <li><a href="https://futuredon.medium.com/integrating-disaggregated-openairinterface-o-ran-components-with-open5gs-5g-core-76e5deac1730">Si quieres saber más, haz click aqui</a></li>
+    </ul>
+
+    <h3>Orquestación, Base de Datos y Herramientas de Gestión</h3>
+    <ul>
+        <li>Docker y Docker Compose</li>
+        <li>MongoDB</li>
+        <li>pySim</li>
+        <li>WebUI Centralizada</li>
+        <li>LTESniffer</li>
+        <li><a href="https://open5gs.org/open5gs/docs/guide/02-building-open5gs-from-sources/">Si quieres saber más, haz click aqui</a></li>
+    </ul>
+
+    <h3>Soporte de Hardware (Opcional en entornos físicos)</h3>
+    <ul>
+        <li>SDRs (Radios Definidas por Software)</li>
+        <li>Reloj de referencia GPSDO</li>
+        <li><a href="https://open5gs.org/open5gs/docs/hardware/01-genodebs/">Si quieres saber más, haz click aqui</a></li>
+    </ul>
+
+    <!-- USOS -->
+    <h2 id="¿PARA_QUE_PODEMOS_UTILIZARLA?">Usos del Open5G</h2>
+    <ul>
+        <li><dt>Investigación en redes móviles:</dt>
+            <dd>Permite hacer experimentos rigurosos y reproducibles, integrando diferentes componentes de radio y de core con equipos de usuario reales.</dd></li>
+        <li><dt>Probar ideas para futuras generaciones de redes:</dt>
+            <dd>Por ejemplo nuevos protocolos o configuraciones.</dd></li>
+        <li><dt>Seguridad:</dt>
+            <dd>El código abierto permite revisar y modificar las implementaciones para simular ataques, evaluar métodos de detección y buscar vulnerabilidades en los estándares actuales.</dd></li>
+        <li><dt>Probar la compatibilidad de celulares y módems:</dt>
+            <dd>con redes privadas 4G y 5G. Es lo que hicieron los autores con teléfonos Samsung, OnePlus, Google Pixel, iPhone y otros.</dd></li>
+        <li><dt>Escenarios específicos:</dt>
+            <dd>Los autores mencionan, por ejemplo, probar vulnerabilidades concretas y evaluar escenarios de roaming.</dd></li>
+        <li><dt>Comparar combinaciones de software:</dt>
+            <dd>Por ejemplo Open5GS con srsRAN frente a Free5GC con OAI-RAN, cambiando de stack rápidamente.</dd></li>
+    </ul>
+
+    <!-- DESCARGAR E INSTALAR -->
+    <h2 id="¿COMO_DESCARGARLO_E_INSTALARLO_EN_UBUNTU?">Descargar e instalar</h2>
+    <h3>Requisitos</h3>
+    <ul>
+        <li>Host con Ubuntu 22.04 LTS (recomendado)</li>
+        <li>8+ núcleos de CPU, 32 GB de RAM, 200 GB de almacenamiento</li>
+        <li>Acceso a Internet y permisos sudo</li>
+    </ul>
+
+    <h3>Como descargar el Ubuntu 22.04 LTS</h3>
+
+    <h3>1. Entrar a la página oficial</h3>
+    <div class="foto img-ubuntu-pagina-oficial" role="img" aria-label="Página releases.ubuntu.com/22.04"></div>
+    <p>Abre <a href="https://releases.ubuntu.com/22.04/">releases.ubuntu.com/22.04</a> (enlace directo a la versión 22.04, porque ubuntu.com/download ofrece la más reciente).</p>
+
+    <h3>2. Descargar la ISO</h3>
+    <div class="foto img-ubuntu-iso" role="img" aria-label="Descarga de la ISO Desktop de Ubuntu 22.04"></div>
+    <ul>
+        <li>Desktop (64-bit): ubuntu-22.04.x-desktop-amd64.iso, unos 4.5 GB. Es la versión con interfaz gráfica.</li>
+        <li>Server: solo para servidores, sin entorno gráfico.</li>
+    </ul>
+    <p>Hasta donde sé, la última revisión es 22.04.5. Descarga la que aparezca en la página.</p>
+
+    <h3>3. Verificar la descarga (opcional)</h3>
+    <p>En PowerShell ejecuta:</p>
+    <pre>Get-FileHash .\ubuntu-22.04.x-desktop-amd64.iso</pre>
+    <p>El resultado debe coincidir con el valor del archivo SHA256SUMS de la página oficial.</p>
+
+    <h3>4. Instalar Ubuntu</h3>
+    <div class="foto img-ubuntu-instalador" role="img" aria-label="Instalador de Ubuntu: Welcome to Ubuntu"></div>
+    <div class="foto img-ubuntu-usuario" role="img" aria-label="Instalador de Ubuntu: creación de usuario (contraseña oculta)"></div>
+    <ol>
+        <li>Elige Try or Install Ubuntu.</li>
+        <li>Selecciona el idioma y pulsa Install Ubuntu.</li>
+        <li>Configura teclado, conexión y tipo de instalación (junto a Windows o borrando el disco).</li>
+        <li>Elige zona horaria y crea tu usuario y contraseña.</li>
+        <li>Espera a que termine y reinicia.</li>
+    </ol>
+
+    <!-- INSTALACION DE OPEN5GCUBE -->
+    <h2>Instalación de open5Gcube</h2>
+
+    <h3>1. Preparación del sistema</h3>
+    <div class="foto img-paso1-update" role="img" aria-label="Terminal: sudo apt update y sudo apt upgrade"></div>
+    <div class="foto img-paso1-install" role="img" aria-label="Terminal: apt install de las herramientas base"></div>
+    <p>Se actualiza Ubuntu con <code>sudo apt update &amp;&amp; sudo apt upgrade -y</code> para trabajar con los paquetes al día.</p>
+    <p>Después se instalan las herramientas base con <code>apt install</code>:</p>
+    <ul>
+        <li><code>git-lfs</code> y <code>curl</code>: descargar el proyecto y archivos.</li>
+        <li><code>make</code>: ejecutar el Makefile del proyecto.</li>
+        <li><code>net-tools</code>, <code>openssh-server</code>, <code>ca-certificates</code>, <code>gnupg</code>, <code>linux-tools-common</code>, <code>python3-virtualenv</code>: red, acceso remoto, certificados y soporte de Python.</li>
+    </ul>
+    <p>En la captura, varios paquetes ya estaban en su versión más reciente.</p>
+
+    <h3>2. Clonación del repositorio</h3>
+    <div class="foto img-paso2-clonacion" role="img" aria-label="Terminal: git clone de open5Gcube"></div>
+    <p>Se descarga el proyecto con <code>git clone https://github.com/open5Gcube/open5Gcube/</code> (unos 2571 objetos) y se entra con <code>cd open5Gcube</code>.</p>
+    <p>Ahí están los scripts, el <code>Makefile</code> y la configuración que se usa en el resto del ejercicio.</p>
+
+    <h3>3. Instalación de Docker</h3>
+    <div class="foto img-paso3-docker" role="img" aria-label="Terminal: instalación de Docker, error docker command not found"></div>
+    <div class="foto img-paso3-servicio" role="img" aria-label="Terminal: systemd-install-unit y startup.sh"></div>
+    <p>Cada función de red 5G corre como un contenedor, por eso Docker es necesario. El instalador <code>install-docker.sh</code> se ejecuta desde <code>make</code> y pide la contraseña de sudo.</p>
+    <p>Antes de instalarlo aparece el error <code>docker: command not found</code>, que es normal porque Docker aún no existía.</p>
+    <p>Luego se ejecutan estos comandos:</p>
+    <ul>
+        <li><code>make systemd-install-unit</code> y <code>sudo systemctl enable o5gc</code>: dejan el servicio open5Gcube habilitado en el arranque.</li>
+        <li><code>sudo ./scripts/startup.sh</code>: ajusta los buffers de red del kernel y configura una interfaz con la IP 192.168.40.1/24.</li>
+    </ul>
+
+    <h3>4. Construcción de imágenes</h3>
+    <div class="foto img-paso4-build" role="img" aria-label="Terminal: construcción de imágenes con docker-build-all"></div>
+    <div class="foto img-paso4-error" role="img" aria-label="Terminal: final del build con Error 2"></div>
+    <div class="foto img-paso4-imagenes" role="img" aria-label="Terminal: lista de imágenes Docker creadas"></div>
+    <p>Con <code>make docker-build-all</code> se construyen las imágenes Docker de todos los componentes. Puede tardar varias horas.</p>
+    <p>Imágenes que se ven en las capturas:</p>
+    <ul>
+        <li><code>o5gc/open5gs</code>: núcleo 5G (2.22 GB).</li>
+        <li><code>o5gc/ueransim</code>: gNB y UE emulados (1.54 GB).</li>
+        <li><code>o5gc/free5gc</code> (2.48 GB) y <code>o5gc-webui</code> (1.91 GB).</li>
+        <li><code>mongo</code> y <code>mongo-express</code>: base de datos de suscriptores.</li>
+    </ul>
+    <p>Nota: una captura termina con <code>make: *** [docker-build-all] Error 2</code>, pero las imágenes quedaron creadas y la WebUI funciona después. Si te lo preguntan, ese error no bloqueó lo necesario para el ejercicio.</p>
+
+    <h3>5. Inicio de la WebUI</h3>
+    <div class="foto img-paso5-webui-start" role="img" aria-label="Terminal: make webui-start, contenedor Healthy"></div>
+    <p>Se ejecuta <code>make webui-start</code>. Este comando crea el volumen <code>o5gc-simcard-scripts</code>, copia los scripts de SIM y levanta el contenedor <code>o5gc-webui</code> con <code>docker compose</code>.</p>
+    <p>Al final aparece <code>Container o5gc-webui Healthy</code>, que indica que arrancó bien.</p>
+
+    <h3>6. Acceso a la WebUI</h3>
+    <div class="foto img-paso6-webui-vacia" role="img" aria-label="WebUI en 127.0.0.1 con 0 running"></div>
+    <div class="foto img-paso6-webui-stack" role="img" aria-label="WebUI con el stack ueransim-open5gs, 15 running"></div>
+    <p>Se abre <code>http://127.0.0.1</code> en el navegador. El panel Service Overview aparece con "0 running" y "Running Stacks: None", porque todavía no hay ningún stack desplegado.</p>
+    <p>En el menú lateral están los stacks disponibles: oai, oairan, ocudu, packetrusher, srsran y ueransim.</p>
+    <p>Al lanzar <code>ueransim-open5gs</code> el panel muestra 15 running, con una tarjeta de logs por contenedor: UE, GNB, SMF, UPF, PCF, AUSF, UDM, UDR, NSSF, BSF, SCP y PCRF, entre otros.</p>
+
+</div>
+<script src="JAVA/script.js"></script>
+</body>
+</html>

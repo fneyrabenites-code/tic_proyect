@@ -1,0 +1,142 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:800italic);
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background: url("../imagenes/fondo.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    padding: 0;}
+
+/* Caja blanca central (en el ejemplo de Duckett eran cajas flotantes de 320px) */
+#contenedor {
+    width: 700px;
+    max-width: 92%;
+    margin: 50px auto;
+    background-color: #fff;
+    color: #5a514c;
+    border: 1px solid #bcbdc0;
+    padding-bottom: 25px;}
+
+/* Logo como imagen de fondo del h1 (mismo truco: text-indent) */
+h1 {
+    margin: 0;
+    height: 175px;
+    background-image: url("../imagenes/logo-open5gcube.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: #000;
+    text-indent: -9999px;
+    border-bottom: 1px solid #bcbdc0;}
+
+h2, h3 {
+    font-family: 'Open Sans', arial, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #0b6fb8;
+    text-transform: uppercase;
+    text-align: center;}
+
+h2 { font-size: 1.8em; margin: 35px 20px 10px 20px;}
+h3 { font-size: 1.2em; margin: 25px 20px 10px 20px;}
+
+p, dd, li, dt {
+    font-weight: bold;
+    color: #222222;
+    line-height: 1.5em;}
+
+p  { margin: 10px 30px; text-align: center;}
+ul, ol { margin: 10px 30px 10px 60px;}
+dd { margin: 5px 30px 5px 40px;}
+dt { text-align: left;}
+pre { margin: 10px 30px; padding: 10px; background: #eee; overflow-x: auto;}
+code { background: #eee; padding: 1px 4px;}
+a { color: #d00000; }
+
+/* Menú de índice */
+#indice {
+    list-style: none;
+    text-align: center;
+    margin: 20px 30px;
+    padding: 15px 0;
+    border-top: 1px solid #bcbdc0;
+    border-bottom: 1px solid #bcbdc0;}
+#indice a,
+#indice li {
+    color: #d00000;
+}
+
+/* Imágenes dentro del contenido */
+/* Las imágenes ahora se cargan desde el CSS como fondo */
+.foto {
+    display: block;
+    width: 90%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    margin: 15px auto;
+    background-color: #eee;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid #bcbdc0;}
+
+.foto-pie {
+    margin: -8px 30px 15px 30px;
+    font-size: 0.8em;
+    font-style: italic;
+    text-align: center;}
+
+/* Fix for full-screen background image: Chrome on Android */
+html{
+    height:100%;
+    min-height:100%;}
+body{
+    min-height:100%;}
+
+/* ---- Imágenes de contenido (antes <img> en el HTML) ---- */
+/* Logo casi cuadrado: caja cuadrada y centrada para que no se vea el gris a los lados */
+.img-que-es {
+    background-image: url("../imagenes/que-es.jpg");
+    aspect-ratio: 1 / 1;
+    width: 300px;
+    max-width: 90%; }
+.img-caracteristicas { background-image: url("../imagenes/caracteristicas.jpg"); aspect-ratio: 1200/640; }
+.img-componentes { background-image: url("../imagenes/componentes.jpg"); aspect-ratio: 1200/640; }
+.img-ubuntu-pagina-oficial {
+    background-image: url("../imagenes/ubuntu-pagina-oficial.jpg");
+    aspect-ratio: 5 / 4;
+    width: 60%; }
+.img-ubuntu-iso { background-image: url("../imagenes/ubuntu-iso.jpg"); aspect-ratio: 16 / 9; }
+
+/* ---- Capturas reales del informe PROYECTO_G5CUBE ---- */
+.img-ubuntu-instalador { background-image: url("../imagenes/ubuntu-instalador.jpg"); aspect-ratio: 793/612; }
+.img-ubuntu-usuario { background-image: url("../imagenes/ubuntu-usuario.jpg"); aspect-ratio: 856/488; }
+.img-paso1-update { background-image: url("../imagenes/paso1-update.jpg"); aspect-ratio: 711/451; }
+.img-paso1-install { background-image: url("../imagenes/paso1-install.jpg"); aspect-ratio: 956/312; }
+.img-paso2-clonacion { background-image: url("../imagenes/paso2-clonacion.jpg"); aspect-ratio: 866/399; }
+.img-paso3-docker { background-image: url("../imagenes/paso3-docker.jpg"); aspect-ratio: 584/403; }
+.img-paso3-servicio { background-image: url("../imagenes/paso3-servicio.jpg"); aspect-ratio: 629/448; }
+.img-paso4-build { background-image: url("../imagenes/paso4-build.jpg"); aspect-ratio: 883/477; }
+.img-paso4-error { background-image: url("../imagenes/paso4-error.jpg"); aspect-ratio: 1115/434; }
+.img-paso4-imagenes { background-image: url("../imagenes/paso4-imagenes.jpg"); aspect-ratio: 1135/335; }
+.img-paso5-webui-start { background-image: url("../imagenes/paso5-webui-start.jpg"); aspect-ratio: 893/384; }
+.img-paso6-webui-vacia { background-image: url("../imagenes/paso6-webui-vacia.jpg"); aspect-ratio: 724/476; }
+.img-paso6-webui-stack { background-image: url("../imagenes/paso6-webui-stack.jpg"); aspect-ratio: 895/576; }
+
+#subir {
+    display: none;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #5a514c;
+    color: #fff;
+    font-size: 1.4em;
+    cursor: pointer;}
